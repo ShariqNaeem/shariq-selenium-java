@@ -9,7 +9,7 @@ import io.cucumber.testng.CucumberOptions;
                 "json:target/cucumber-reports/cucumber.json",
                 "rerun:target/failed_scenario.txt"
         },
-        features = {"src/test/java/features/Login.feature"},
+        features = {"src/test/java/features"},
         glue = {"saucedemo.stepdefinations"},
         monochrome = true,
         tags = "@web"
