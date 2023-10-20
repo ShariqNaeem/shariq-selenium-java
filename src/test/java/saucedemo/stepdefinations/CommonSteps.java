@@ -1,6 +1,6 @@
 package saucedemo.stepdefinations;
 
-import io.cucumber.java.en.And;
+import io.cucumber.java.en.*;
 import saucedemo.pageobjects.CommonPage;
 import saucedemo.utils.DriverManager;
 
@@ -10,7 +10,7 @@ public class CommonSteps extends DriverManager {
     public CommonSteps(){
         commonPage = new CommonPage(getDriver());
     }
-    @And("Validate that URL contains {string} text")
+    @Then("Validate that URL contains {string} text")
     public void validateURL(String url) {
         commonPage.validateURL(url);
     }

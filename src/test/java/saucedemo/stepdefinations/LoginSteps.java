@@ -25,4 +25,9 @@ public class LoginSteps extends DriverManager {
     public void iClickLoginButton() {
         loginPage.clickLoginBtn();
     }
+
+    @Then("Validate the login error {string} message")
+    public void validateErrorMsgOnLoginPage(String errorMsg) {
+        loginPage.validateLoginErrorMsg(errorMsg);
+    }
 }
