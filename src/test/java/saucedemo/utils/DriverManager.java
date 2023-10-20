@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
+import org.testng.Assert;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -28,6 +29,8 @@ public class DriverManager {
         driver.manage().window().maximize();
 
         driver.get("https://www.saucedemo.com/");
+        String actualTitle = driver.getTitle();
+        Assert.assertEquals(actualTitle, "Swag Labs", "Page title doesn't match the expected title.");
     }
 
     public static WebDriver getDriver() {
