@@ -6,9 +6,9 @@ import io.cucumber.java.Before;
 
 import java.io.IOException;
 
-public class Hooks {
+public class _Hooks {
 
-    public Hooks() {}
+    public _Hooks() {}
     @After
     public void quitDriver() {
         DriverManager.closeBrowser();
