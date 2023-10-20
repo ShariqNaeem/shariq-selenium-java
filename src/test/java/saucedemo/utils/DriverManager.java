@@ -8,8 +8,10 @@ import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
 import org.testng.Assert;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 import java.util.logging.Level;
 
 public class DriverManager {
@@ -28,9 +30,16 @@ public class DriverManager {
         driver.manage().timeouts().scriptTimeout(Duration.ofMinutes(2));
         driver.manage().window().maximize();
 
-        driver.get("https://www.saucedemo.com/");
+        Properties properties = new Properties();
+        FileInputStream fileInputStream = new FileInputStream("src/test/resources/config.properties");
+        properties.load(fileInputStream);
+
+        String baseUrl = properties.getProperty("baseUrl");
+        String expectedTitle = properties.getProperty("title");
+
+        driver.get(baseUrl);
         String actualTitle = driver.getTitle();
-        Assert.assertEquals(actualTitle, "Swag Labs", "Page title doesn't match the expected title.");
+        Assert.assertEquals(actualTitle, expectedTitle, "Page title doesn't match the expected title.");
     }
 
     public static WebDriver getDriver() {
