@@ -4,11 +4,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-        plugin = {"pretty",
-                "html:target/cucumber-reports/cucumber.html",
-                "json:target/cucumber-reports/cucumber.json",
-                "rerun:target/failed_scenario.txt"
-        },
+        plugin = { "pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
         features = {"src/test/java/features"},
         glue = {"saucedemo.stepdefinations"},
         monochrome = true,
