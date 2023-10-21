@@ -6,14 +6,14 @@ This project is an automation testing framework for the **SAUCE DEMO** applicati
 ## Table of Contents
 
 - [Overview](#overview)
+- [Key Features](#keyfeatures)
+- [Project Structure](#project-structure)
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
 - [Running Tests](#running-tests)
 - [Reporting](#reporting)
-- 
 
-## Overview
+### Overview
 
 The main objective of this project is to demonstrate how to create a robust and maintainable test automation framework for web applications using Java and various open-source testing tools. The framework follows best practices in test automation, including BDD (Behavior-Driven Development) with Cucumber and comprehensive test reporting with Allure.
 
@@ -51,16 +51,23 @@ Before you begin, ensure you have the following tools and dependencies installed
 - A suitable Integrated Development Environment (IDE) such as IntelliJ IDEA.
 - Also you need to set the ALLURE path in the environment variable.
 
-## Getting Started
+### Getting Started
 
 To get started with the project, follow these steps:
 
 1. Clone this repository to your local machine.
 2. Install the required dependencies and tools mentioned in the Prerequisites section.
 3. Open the project in your preferred Java IDE.
-4. Goto the TestRunner.java file. Right click on the file and select the 'Run `TestRunner`' option.
-5. After running the test cases, you will getting the 'allure-results' directory
-6. Now you have to run the following command for the allure reoprting:
+
+### Running Tests
+
+-  Goto the TestRunner.java file. Right click on the file and select the 'Run `TestRunner`' option.
+
+### Reporting
+
+-  After running the test cases, you will getting the 'allure-results' directory
+-  Now you have to run the following command for the allure reoprting:
   ```allure serve allure-results```
+
 
 For detailed instructions on running tests and generating reports, please refer to the relevant sections below.
