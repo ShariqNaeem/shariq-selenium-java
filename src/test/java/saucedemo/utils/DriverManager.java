@@ -1,6 +1,10 @@
 package saucedemo.utils;
 
+import io.cucumber.java.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Allure;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -8,6 +12,7 @@ import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
 import org.testng.Assert;
 
+import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
@@ -47,9 +52,11 @@ public class DriverManager {
     }
 
 
-    public static void closeBrowser() {
-        if (driver != null) {
-            driver.quit();
+    public static void closeBrowser(Scenario scenario) {
+        if(scenario.isFailed())
+        {
+            Allure.addAttachment(scenario.getName(), new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         }
+            driver.quit();
     }
 }
