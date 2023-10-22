@@ -65,9 +65,13 @@ To get started with the project, follow these steps:
 
 ### Reporting
 
--  After running the test cases, you will getting the 'allure-results' directory
--  Now you have to run the following command for the allure reoprting:
+-  After running the test cases, you will get the 'allure-results' directory
+-  Now you have to run the following command for the allure reporting:
   ```allure serve allure-results```
 
+![img.png](img.png)
 
-For detailed instructions on running tests and generating reports, please refer to the relevant sections below.
+- If any test case fails or exhibits flakiness, we can identify it from the details provided in the Allure report.
+![img_1.png](img_1.png)
+
+For detailed instructions on running tests and generating reports, please refer to the relevant sections.
