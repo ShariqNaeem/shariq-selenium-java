@@ -25,6 +25,7 @@ public class DriverManager {
     public static void driverSetup() throws IOException {
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setHeadless(true);
         chromeOptions.addArguments("--remote-allow-origins=*");
         LoggingPreferences logPrefs = new LoggingPreferences();
         logPrefs.enable(LogType.BROWSER, Level.ALL);
