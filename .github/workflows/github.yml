@@ -24,6 +24,11 @@ jobs:
           overwrite-settings: true
           job-status: success
 
+      - name: Install Allure Command Line
+        run: |
+          sudo apt-add-repository ppa:qameta/allure
+          sudo apt-get update
+          sudo apt-get install allure
 
       - name: Build with Maven
         run: mvn clean install -DskipTests  # Build your project, excluding test execution
