@@ -12,6 +12,7 @@ This project is an automation testing framework for the **SAUCE DEMO** applicati
 - [Getting Started](#getting-started)
 - [Running Tests](#running-tests)
 - [Reporting](#reporting)
+- [Github Actions][#github-actions]
 
 ### Overview
 
@@ -73,5 +74,11 @@ To get started with the project, follow these steps:
 
 - If any test case fails or exhibits flakiness, we can identify it from the details provided in the Allure report.
 ![img_1.png](img_1.png)
+
+
+### Github Actions
+
+
+
 
 For detailed instructions on running tests and generating reports, please refer to the relevant sections.
