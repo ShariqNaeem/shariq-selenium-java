@@ -1,0 +1,40 @@
+name: Selenium Tests
+
+on: [push]  # Trigger the workflow when code is pushed to the repository
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: 17
+          distribution: 'adopt'
+          java-package: jdk
+          architecture: x64
+          check-latest: false
+          server-id: github
+          server-username: ${{ github.actor }}
+          server-password: ${{ secrets.GITHUB_TOKEN }}
+          overwrite-settings: true
+          job-status: success
+
+
+      - name: Build with Maven
+        run: mvn clean install -DskipTests  # Build your project, excluding test execution
+
+      - name: Run Selenium Tests
+        run:  mvn test -Dtest= -DsuiteXmlFile=testng.xml
+        env:
+          BROWSER: chrome  # You can specify the browser as an environment variable
+
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: target/surefire-reports  # Adjust the path to your test results
