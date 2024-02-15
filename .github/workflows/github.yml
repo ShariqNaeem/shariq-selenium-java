@@ -33,8 +33,14 @@ jobs:
         env:
           BROWSER: chrome  # You can specify the browser as an environment variable
 
+      - name : Generate Allure Report
+        run : allure generate ./allure-results --clean
+
       - name: Upload Test Results
         uses: actions/upload-artifact@v2
+        if: always()
         with:
-          name: test-results
-          path: target/surefire-reports  # Adjust the path to your test results
+          name: Allure Results
+          path: |
+            allure-results/
+            allure-report
