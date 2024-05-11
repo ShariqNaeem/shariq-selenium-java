@@ -1,8 +1,8 @@
-package saucedemo.stepdefinations;
+package mercans.stepdefinations;
 
 import io.cucumber.java.en.*;
-import saucedemo.pageobjects.ProductListingPage;
-import saucedemo.utils.DriverManager;
+import mercans.pageobjects.ProductListingPage;
+import mercans.utils.DriverManager;
 
 
 public class ProducListingSteps extends DriverManager {

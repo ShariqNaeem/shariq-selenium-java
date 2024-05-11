@@ -1,4 +1,4 @@
-package saucedemo.utils;
+package mercans.utils;
 
 import io.cucumber.java.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -6,11 +6,7 @@ import io.qameta.allure.Allure;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.logging.LogType;
-import org.openqa.selenium.logging.LoggingPreferences;
 import org.testng.Assert;
 
 import java.io.ByteArrayInputStream;
@@ -18,7 +14,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
-import java.util.logging.Level;
 
 public class DriverManager {
     public static WebDriver driver;
@@ -27,7 +22,7 @@ public class DriverManager {
         WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.manage().timeouts().scriptTimeout(Duration.ofMinutes(2));
         driver.manage().window().maximize();
 

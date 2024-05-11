@@ -1,8 +1,8 @@
-package saucedemo.stepdefinations;
+package mercans.stepdefinations;
 
 import io.cucumber.java.en.*;
-import saucedemo.pageobjects.CommonPage;
-import saucedemo.utils.DriverManager;
+import mercans.pageobjects.CommonPage;
+import mercans.utils.DriverManager;
 
 public class CommonSteps extends DriverManager {
     private CommonPage commonPage;
