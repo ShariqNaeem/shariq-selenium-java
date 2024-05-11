@@ -32,7 +32,7 @@ public class LoginSteps extends DriverManager {
     }
 
     @Then("Validate the login error {string} message")
-    public void validateErrorMsgOnLoginPage(String errorMsg) {
+    public void validateErrorMsgOnLoginPage(String errorMsg) throws InterruptedException {
         loginPage.validateLoginErrorMsg(errorMsg);
     }
 }

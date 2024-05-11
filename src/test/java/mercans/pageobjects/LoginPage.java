@@ -11,7 +11,7 @@ public class LoginPage {
     By emailField = By.cssSelector("input[name=\"email\"]");
     By passwordField = By.cssSelector("input[name=\"password\"]");
     By loginBtn = By.cssSelector("[data-test=\"perform-login\"]");
-    By errorMsg = By.className("error-message-container");
+    By loginErrorMsg = By.cssSelector(".login-field__error.error-message");
 
     private WebDriver driver;
 
@@ -32,8 +32,9 @@ public class LoginPage {
         driver.findElement(loginBtn).click();
     }
 
-    public void validateLoginErrorMsg(String expectedErrorText){
-        String ActualErrorText = driver.findElement(errorMsg).getText();
+    public void validateLoginErrorMsg(String expectedErrorText) throws InterruptedException {
+        Wait.longWaitForWebElement().until(ExpectedConditions.visibilityOfElementLocated(loginErrorMsg));
+        String ActualErrorText = driver.findElement(loginErrorMsg).getText();
         Assert.assertEquals(ActualErrorText, expectedErrorText);
     }
 
