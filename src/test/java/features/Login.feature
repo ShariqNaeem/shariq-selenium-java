@@ -9,8 +9,8 @@ Feature: Login functionality test cases
     And Validate that URL contains "<url>" text
     Examples:
       | email         | password         | url              |
-      | employeeEmail | employeePassword | ess/quick-access |
-      | managerEmail  | managerPassword  | ess/quick-access |
+      | employeeEmail | employeePassword | quickAccessURL |
+      | managerEmail  | managerPassword  | quickAccessURL |
 
   @web @login2
   Scenario Outline: Negative - User should not be able to login in the application
