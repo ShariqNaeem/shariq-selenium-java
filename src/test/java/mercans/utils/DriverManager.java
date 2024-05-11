@@ -7,6 +7,9 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.logging.LogType;
+import org.openqa.selenium.logging.LoggingPreferences;
 import org.testng.Assert;
 
 import java.io.ByteArrayInputStream;
@@ -14,13 +17,22 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
+import java.util.logging.Level;
 
 public class DriverManager {
     public static WebDriver driver;
 
     public static void driverSetup() throws IOException {
         WebDriverManager.edgedriver().setup();
-        driver = new EdgeDriver();
+        EdgeOptions edgeOptions = new EdgeOptions();
+        edgeOptions.setHeadless(true); // Enable headless mode
+        edgeOptions.addArguments("--remote-allow-origins=*"); // Add additional arguments
+
+        // Set up logging preferences
+        LoggingPreferences logPrefs = new LoggingPreferences();
+        logPrefs.enable(LogType.BROWSER, Level.ALL);
+        edgeOptions.setCapability("goog:loggingPrefs", logPrefs);
+        driver = new EdgeDriver(edgeOptions);
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.manage().timeouts().scriptTimeout(Duration.ofMinutes(2));
