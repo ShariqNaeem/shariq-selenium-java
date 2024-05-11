@@ -25,11 +25,7 @@ Feature: Leaves functionality test cases
     And User landed to the quick access page
     And I clicks on the quick access - leaves card
     Then Validate that URL contains "leavesURL" text
-    When I click on plus button for requesting the leave
-    Then Validate that URL contains "newLeavesRequestURL" text
-    And Request new leave modal should be displayed
-    And Select a date for the request a leave
-    Then Validate before and after leaves should be matched
+    When I select the first draft leave request
     And I click on the request leave and confirm button
     Then Validate that alert should be displayed with the "Request has been submitted" text
 

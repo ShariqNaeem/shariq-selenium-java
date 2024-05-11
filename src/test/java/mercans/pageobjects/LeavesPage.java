@@ -24,6 +24,7 @@ public class LeavesPage {
     By draftRequest = By.cssSelector("div.request-tiles__wrapper>div:nth-child(1)");
     By deleteDraftRequest = By.cssSelector("button[data-test=\"delete-draft\"]");
     By yesBtnDeleteModal = By.cssSelector("#dialog-box .button-main.type--danger");
+    By firstDraftRequestCard = By.cssSelector("div.request-tiles__wrapper>div.tile-wrapper:nth-child(1)");
     public LeavesPage(WebDriver driver){
         this.driver = driver;
     }
@@ -56,14 +57,20 @@ public class LeavesPage {
         Wait.longWaitForWebElement().until(ExpectedConditions.visibilityOfElementLocated(saveDraftBtn)).click();
     }
 
+    public void clickFirstDraftRequest() throws InterruptedException {
+        Wait.longWaitForWebElement().until(ExpectedConditions.visibilityOfElementLocated(firstDraftRequestCard)).click();
+    }
+
     public void clickRequestLeaveBtn() throws InterruptedException {
+        Thread.sleep(3000);
         WebElement element = Wait.longWaitForWebElement().until(ExpectedConditions.presenceOfElementLocated(requestLeaveBtn));
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].scrollIntoView(true);", element);
         element.click();
     }
     public void clickConfirmRequestLeaveBtn() throws InterruptedException {
-        Wait.longWaitForWebElement().until(ExpectedConditions.visibilityOfElementLocated(confirmRequestLeaveBtn)).click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", Wait.longWaitForWebElement().until(ExpectedConditions.presenceOfElementLocated(confirmRequestLeaveBtn)));
     }
 
     public void deleteDraftRequest() throws InterruptedException {

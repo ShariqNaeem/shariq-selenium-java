@@ -11,7 +11,7 @@ public class ReviewerPage {
     By leavesTable = By.id("tableBody-leave-table");
     By firstLeaveRow = By.cssSelector("#tableBody-leave-table tr:first-child");
     By rejectRequestBtn = By.cssSelector("[data-test=\"reject-request\"]");
-    By rejectNote = By.cssSelector("rejected_notes");
+    By rejectNote = By.id("rejected_notes");
     public ReviewerPage(WebDriver driver){
         this.driver = driver;
     }

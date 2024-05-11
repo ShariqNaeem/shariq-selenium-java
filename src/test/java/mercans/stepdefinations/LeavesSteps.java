@@ -50,4 +50,9 @@ public class LeavesSteps extends DriverManager {
     public void deleteDraftRequest() throws InterruptedException {
         leavesPage.deleteDraftRequest();
     }
+
+    @And("I select the first draft leave request")
+    public void clickFirstDraftRequest() throws InterruptedException {
+        leavesPage.clickFirstDraftRequest();
+    }
 }
