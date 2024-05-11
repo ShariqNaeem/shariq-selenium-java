@@ -1,8 +1,9 @@
 package mercans.stepdefinations;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import mercans.pageobjects.LeavesPage;
-import mercans.pageobjects.QuickAccessPage;
 import mercans.utils.DriverManager;
 import org.testng.Assert;
 
@@ -15,7 +16,32 @@ public class LeavesSteps extends DriverManager {
     }
 
     @Then("I click on plus button for requesting the leave")
-    public void validateQuickAccessPage() throws InterruptedException {
+    public void clickOnPlusButton() throws InterruptedException {
         leavesPage.clickOnPlusButton();
+    }
+
+    @Then("Request new leave modal should be displayed")
+    public void validateRequestLeaveModal() throws InterruptedException {
+        Assert.assertEquals(leavesPage.getModalTitle().getText(), "Request new leave");
+    }
+
+    @When("Select a date for the request a leave")
+    public void selectDateForLeave() throws InterruptedException {
+        leavesPage.selectADateForLeave();
+    }
+
+    @Then("Validate before and after leaves should be matched")
+    public void validateBeforeAndAfterRequest() throws InterruptedException {
+        Assert.assertNotEquals(leavesPage.getBeforeRequest().getText(), leavesPage.getAfterRequest().getText());
+    }
+
+    @Then("I click on the save draft button")
+    public void clickOnSaveDraftButton() throws InterruptedException {
+        leavesPage.clickSaveDraftBtn();
+    }
+
+    @And("I delete the draft leaves request")
+    public void deleteDraftRequest() throws InterruptedException {
+        leavesPage.deleteDraftRequest();
     }
 }
