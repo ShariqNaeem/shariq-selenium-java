@@ -20,7 +20,8 @@ public class ReviewerPage {
     }
 
     public WebElement getFirstLeaveRow() throws InterruptedException {
-        return Wait.longWaitForWebElement().until(ExpectedConditions.visibilityOfElementLocated(firstLeaveRow));
+        Thread.sleep(2000);
+        return Wait.longWaitForWebElement().until(ExpectedConditions.presenceOfElementLocated(firstLeaveRow));
     }
 
     public WebElement getRejectButton() throws InterruptedException {

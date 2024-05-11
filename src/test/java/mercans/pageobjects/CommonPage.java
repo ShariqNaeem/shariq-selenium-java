@@ -2,6 +2,7 @@ package mercans.pageobjects;
 
 import mercans.utils.Wait;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -48,7 +49,9 @@ public class CommonPage {
     }
 
     public void clickApprovalMenu() throws InterruptedException {
-        Wait.longWaitForWebElement().until(ExpectedConditions.visibilityOfElementLocated(approvalMenu)).click();
+//        Wait.longWaitForWebElement().until(ExpectedConditions.visibilityOfElementLocated(approvalMenu)).click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", Wait.longWaitForWebElement().until(ExpectedConditions.presenceOfElementLocated(approvalMenu)));
     }
     public void clickLeavesMenu() throws InterruptedException {
         Wait.longWaitForWebElement().until(ExpectedConditions.visibilityOfElementLocated(leavesMenuMenu)).click();

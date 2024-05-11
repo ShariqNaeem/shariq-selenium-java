@@ -42,7 +42,7 @@ Feature: Leaves functionality test cases
     And User landed to the quick access page
     And I select the approval menu in the left sidebar
     Then User landed to the reviewer listing page
-    And Validate that URL contains "newLeavesRequestURL" text
+    And Validate that URL contains "reviewerListingURL" text
     When I clicks on the first leave that required the approval
     And I clicks on the reject button in the right side-bar
     And Submit the leave rejection note|reason "Testing: leave rejection"

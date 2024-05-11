@@ -2,6 +2,7 @@ package mercans.pageobjects;
 
 import mercans.utils.Wait;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -36,7 +37,9 @@ public class LeavesPage {
     }
 
     public void selectADateForLeave() throws InterruptedException {
+        Thread.sleep(2000);
         Wait.longWaitForWebElement().until(ExpectedConditions.visibilityOfElementLocated(leaveDate)).click();
+        Thread.sleep(2000);
         Wait.longWaitForWebElement().until(ExpectedConditions.visibilityOfElementLocated(leaveDate)).click();
 
     }
@@ -54,10 +57,13 @@ public class LeavesPage {
     }
 
     public void clickRequestLeaveBtn() throws InterruptedException {
-        Wait.longWaitForWebElement().until(ExpectedConditions.presenceOfElementLocated(requestLeaveBtn)).click();
+        WebElement element = Wait.longWaitForWebElement().until(ExpectedConditions.presenceOfElementLocated(requestLeaveBtn));
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].scrollIntoView(true);", element);
+        element.click();
     }
     public void clickConfirmRequestLeaveBtn() throws InterruptedException {
-        Wait.longWaitForWebElement().until(ExpectedConditions.presenceOfElementLocated(confirmRequestLeaveBtn)).click();
+        Wait.longWaitForWebElement().until(ExpectedConditions.visibilityOfElementLocated(confirmRequestLeaveBtn)).click();
     }
 
     public void deleteDraftRequest() throws InterruptedException {
