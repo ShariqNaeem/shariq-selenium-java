@@ -1,4 +1,4 @@
-package saucedemo;
+package mercans;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         plugin = { "pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
         features = {"src/test/java/features"},
-        glue = {"saucedemo.stepdefinations"},
+        glue = {"mercans.stepdefinations"},
         monochrome = true,
         tags = "@web"
 )

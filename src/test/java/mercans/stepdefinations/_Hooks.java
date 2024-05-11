@@ -1,7 +1,7 @@
-package saucedemo.stepdefinations;
+package mercans.stepdefinations;
 
 import io.cucumber.java.Scenario;
-import saucedemo.utils.DriverManager;
+import mercans.utils.DriverManager;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
