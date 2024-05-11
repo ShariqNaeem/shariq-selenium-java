@@ -18,6 +18,8 @@ public class LeavesPage {
     By beforeRequest = By.id("balance-bubble-before");
     By afterRequest = By.id("balance-bubble-after");
     By saveDraftBtn = By.cssSelector("button[data-test=\"save-draft\"]");
+    By requestLeaveBtn = By.cssSelector("button[data-test=\"submit-approve\"]");
+    By confirmRequestLeaveBtn = By.cssSelector("button[data-test=\"confirm-action-button\"]");
     By draftRequest = By.cssSelector("div.request-tiles__wrapper>div:nth-child(1)");
     By deleteDraftRequest = By.cssSelector("button[data-test=\"delete-draft\"]");
     By yesBtnDeleteModal = By.cssSelector("#dialog-box .button-main.type--danger");
@@ -49,6 +51,13 @@ public class LeavesPage {
 
     public void clickSaveDraftBtn() throws InterruptedException {
         Wait.longWaitForWebElement().until(ExpectedConditions.visibilityOfElementLocated(saveDraftBtn)).click();
+    }
+
+    public void clickRequestLeaveBtn() throws InterruptedException {
+        Wait.longWaitForWebElement().until(ExpectedConditions.presenceOfElementLocated(requestLeaveBtn)).click();
+    }
+    public void clickConfirmRequestLeaveBtn() throws InterruptedException {
+        Wait.longWaitForWebElement().until(ExpectedConditions.presenceOfElementLocated(confirmRequestLeaveBtn)).click();
     }
 
     public void deleteDraftRequest() throws InterruptedException {

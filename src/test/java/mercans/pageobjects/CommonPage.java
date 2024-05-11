@@ -18,6 +18,9 @@ public class CommonPage {
 
     private WebDriver driver;
     By alert = By.cssSelector("div[role='alert'] div.snackBar-message");
+    By closeAlert = By.cssSelector("[data-test=\"snackbar-close-button\"]");
+    By approvalMenu = By.xpath("//a[text()='Approvals']");
+    By leavesMenuMenu = By.cssSelector(".lp-nav-menu__link.lp-nav-menu__expandable");
 
     public CommonPage(WebDriver driver){
         this.driver = driver;
@@ -38,5 +41,16 @@ public class CommonPage {
 
     public WebElement getAlertMessage() throws InterruptedException {
         return Wait.longWaitForWebElement().until(ExpectedConditions.visibilityOfElementLocated(alert));
+    }
+
+    public WebElement getCloseAlert() throws InterruptedException {
+        return Wait.longWaitForWebElement().until(ExpectedConditions.visibilityOfElementLocated(closeAlert));
+    }
+
+    public void clickApprovalMenu() throws InterruptedException {
+        Wait.longWaitForWebElement().until(ExpectedConditions.visibilityOfElementLocated(approvalMenu)).click();
+    }
+    public void clickLeavesMenu() throws InterruptedException {
+        Wait.longWaitForWebElement().until(ExpectedConditions.visibilityOfElementLocated(leavesMenuMenu)).click();
     }
 }

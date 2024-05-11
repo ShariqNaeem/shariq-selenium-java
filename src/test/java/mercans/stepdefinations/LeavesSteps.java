@@ -40,6 +40,12 @@ public class LeavesSteps extends DriverManager {
         leavesPage.clickSaveDraftBtn();
     }
 
+    @Then("I click on the request leave and confirm button")
+    public void clickOnRequestLeaveButton() throws InterruptedException {
+        leavesPage.clickRequestLeaveBtn();
+        leavesPage.clickConfirmRequestLeaveBtn();
+    }
+
     @And("I delete the draft leaves request")
     public void deleteDraftRequest() throws InterruptedException {
         leavesPage.deleteDraftRequest();

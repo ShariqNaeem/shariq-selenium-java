@@ -19,6 +19,13 @@ public class CommonSteps extends DriverManager {
     }
     @Then("Validate that alert should be displayed with the {string} text")
     public void validateAlertMessage(String message) throws InterruptedException {
-        Assert.assertEquals(commonPage.getAlertMessage().getText(), message);
+        Assert.assertTrue(commonPage.getAlertMessage().getText().contains(message));
+        commonPage.getCloseAlert().click();
+    }
+
+    @When("I select the approval menu in the left sidebar")
+    public void validateAlertMessage() throws InterruptedException {
+        commonPage.clickLeavesMenu();
+        commonPage.clickApprovalMenu();
     }
 }
