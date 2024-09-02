@@ -1,7 +1,7 @@
-package mercans.stepdefinations;
+package inertia.stepdefinations;
 
 import io.cucumber.java.Scenario;
-import mercans.utils.DriverManager;
+import inertia.utils.DriverManager;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 

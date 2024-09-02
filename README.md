@@ -34,11 +34,11 @@ The main objective of this project is to demonstrate how to create a robust and 
 The project structure is organized as follows:
 
 - The `src` directory contains the source code, including page objects, step definations, test runner, feature files and utility classes.
-- The `src/test/java/mercans/pageobjects` directory holds the page objects classes that contain the locators, assertions, and performing actions.
-- The `src/test/java/mercans/stepdefinations` directory contain the Hook file, and step defination files that are working as a bridge between feature files and the page object files.
-- The `src/test/java/mercans/utils` directory has the class DriverManager where we defined the WebDriver and setting up the browser capabilities.
+- The `src/test/java/inertia/pageobjects` directory holds the page objects classes that contain the locators, assertions, and performing actions.
+- The `src/test/java/inertia/stepdefinations` directory contain the Hook file, and step defination files that are working as a bridge between feature files and the page object files.
+- The `src/test/java/inertia/utils` directory has the class DriverManager where we defined the WebDriver and setting up the browser capabilities.
 - The `src/test/java/features` directory contains the feature files written in Gherkin.
-- The `src/test/java/mercans/TestRunner.java` This file has the cucumber runner, where we defined the @CucumberOptions for running the test cases.
+- The `src/test/java/inertia/TestRunner.java` This file has the cucumber runner, where we defined the @CucumberOptions for running the test cases.
 - The `allure-results` directory stores the output of test runs, which is used to generate Allure reports.
 - The `src/test/resources` directory contain the config.properties file. We defined the baseURL, and title. Also we can add the browser name for the headless / cross browsing testing.
 

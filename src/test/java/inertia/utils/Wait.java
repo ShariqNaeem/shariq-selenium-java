@@ -1,8 +1,8 @@
-package mercans.utils;
+package inertia.utils;
 
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
-import static mercans.utils.DriverManager.driver;
+import static inertia.utils.DriverManager.driver;
 
 public class Wait{
 

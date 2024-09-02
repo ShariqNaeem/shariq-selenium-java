@@ -2,7 +2,7 @@
 <suite name="Sauce Demo Test Suite">
     <test name="Sauce Demo">
         <classes>
-            <class name="mercans.TestRunner">
+            <class name="inertia.TestRunner">
             </class>
         </classes>
     </test>

@@ -1,4 +1,4 @@
-package mercans;
+package inertia;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         plugin = { "pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
         features = {"src/test/java/features"},
-        glue = {"mercans.stepdefinations"},
+        glue = {"inertia.stepdefinations"},
         monochrome = true,
         tags = "@web"
 )
