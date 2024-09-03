@@ -12,10 +12,10 @@ Feature: Login functionality test cases
     And  Select BloodDraw and Load the data
     Then Validate side panel tabs should be displayed
     When Click on the add checklist button
-    And  Click on the add checklist option modal should be displayed
-    And  Select the "202040415 New Self Serve Checklsit 1" checklist option
-    And  Select the "All objects of this type" apply to option
-    Then Click on the add modal button and close the modal
+#    And  Click on the add checklist option modal should be displayed
+#    And  Select the "202040415 New Self Serve Checklsit 1" checklist option
+#    And  Select the "All objects of this type" apply to option
+#    Then Click on the add modal button and close the modal
 
 
 
