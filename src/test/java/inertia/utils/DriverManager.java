@@ -20,15 +20,6 @@ public class DriverManager {
 
     public static void driverSetup() throws IOException {
         WebDriverManager.edgedriver().setup();
-//        EdgeOptions edgeOptions = new EdgeOptions();
-//        edgeOptions.setHeadless(true); // Enable headless mode
-//        edgeOptions.addArguments("--remote-allow-origins=*"); // Add additional arguments
-//
-//        // Set up logging preferences
-//        LoggingPreferences logPrefs = new LoggingPreferences();
-//        logPrefs.enable(LogType.BROWSER, Level.ALL);
-//        edgeOptions.setCapability("goog:loggingPrefs", logPrefs);
-//        driver = new EdgeDriver(edgeOptions);
         driver = new EdgeDriver();
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
